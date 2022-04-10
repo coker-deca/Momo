@@ -7,14 +7,33 @@ export const Wrapper = styled.div`
     height: 100vh;
 `;
 
-export const Container = styled.div`
+export const Divider = styled.div`
+    width: 20%;
+    height: 100%;
+`;
+
+export const Container = styled.section<{size?:string}>`
     @media only screen and (max-width: 992px){
         width: 100%;
     }
     position: relative;
     flex-grow: 1;
-    width: 60%;
-    height: 100vh;
+    width: ${props=>props.size ? props.size : "60%"};
+    height: 100%;
+
+    .splash-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .bullets {
+        display: flex;
+
+        svg {
+            margin: 0;
+            margin-right: 22px;
+        }
+    }
 
     .images{
         position: absolute;
@@ -60,5 +79,24 @@ export const Row = styled.div`
         @media only screen and (max-width: 992px){
             width: 100%;
         }
+    }
+`;
+
+export const HomeRow = styled(Row)`
+    font-family: "Gilroy-Bold";
+    height: 575px;
+    section{
+        display: static;
+    }
+    .with-background{
+        background: url("../../resources/background-elipses.png");
+        background-position: bottom right;
+    }
+    button{
+        width: 50%;
+    }
+
+    svg{
+        margin: 28px 12px 0 0;
     }
 `;

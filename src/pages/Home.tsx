@@ -1,14 +1,15 @@
 import { FunctionComponent } from 'react';
 
-import NavBar from '../components/NavBar/NavBar';
-import { Wrapper } from '../components/templates/style';
+import BillPayment from '../components/BillPayment/BillPayment';
+import DigitalBank from '../components/DigitalBank/DigitalBank';
+import HomeTemplate from '../components/templates/HomeTemplate';
 
 const Home: FunctionComponent = () => {
   return (
-    <Wrapper>
-      <NavBar />
-      <h1>Home Page</h1>
-    </Wrapper>
+    <HomeTemplate>
+      <DigitalBank />
+      <BillPayment />
+    </HomeTemplate>
   );
 };
 
