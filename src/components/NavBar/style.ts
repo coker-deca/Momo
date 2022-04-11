@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledNavbar = styled.header`
   display: flex;
   align-items: center;
+  margin: 0 10%;
 
   font-family: "Gilroy-Bold";
   font-weight: 400;

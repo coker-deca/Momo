@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { StyledButton } from '../ui/Button';
 import { DropdownOption } from '../ui/DropIcon';
@@ -7,6 +8,7 @@ import { OptionsContainer } from '../ui/OptionsContainer';
 import { NavbarItem, StyledNavbar } from './style';
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("");
   const openDropdown = (value: string) => {
@@ -55,8 +57,20 @@ const NavBar = () => {
           : null}
       </NavbarItem>
       <NavbarItem>
-        <NavbarItem>Login</NavbarItem>
-        <StyledButton>Sign Up</StyledButton>
+        <NavbarItem
+          onClick={() => {
+            navigate("/sign-in");
+          }}
+        >
+          Login
+        </NavbarItem>
+        <StyledButton
+          onClick={() => {
+            navigate("/sign-up");
+          }}
+        >
+          Sign Up
+        </StyledButton>
       </NavbarItem>
     </StyledNavbar>
   );
