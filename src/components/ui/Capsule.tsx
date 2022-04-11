@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Capsule = styled.div`
-  margin-top: 45px;
   margin-bottom: 26px;
   width: fit-content;
   background: #f5ebff;

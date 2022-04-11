@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
+import elipses from '../../resources/background-elipses.png';
+
 export const Wrapper = styled.div`
     box-sizing: border-box;
     width: 100%;
-    padding: 4% 10%;
+    padding: 4% 0;
     height: 100vh;
+
+    .with-background{
+        background: url(${elipses}) no-repeat;
+        background-position: top 5px right 10px;
+    }
 `;
 
 export const Divider = styled.div`
@@ -20,6 +27,10 @@ export const Container = styled.section<{size?:string}>`
     flex-grow: 1;
     width: ${props=>props.size ? props.size : "60%"};
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3%;
 
     .splash-image {
         width: 100%;
@@ -32,6 +43,8 @@ export const Container = styled.section<{size?:string}>`
         svg {
             margin: 0;
             margin-right: 22px;
+            min-width: 32px;
+            min-height: 32px;
         }
     }
 
@@ -64,6 +77,15 @@ export const Container = styled.section<{size?:string}>`
         bottom: 25%;
         z-index: 3;
     }
+    img{
+        margin-top: 10%;
+    }
+    .last-image{
+        height: 140%;
+        img{
+            height: 100%;
+        }
+    }
 `;
 
 export const Row = styled.div`
@@ -82,15 +104,21 @@ export const Row = styled.div`
     }
 `;
 
-export const HomeRow = styled(Row)`
+export const HomeRow = styled(Row)<{bgColor?: string}>`
     font-family: "Gilroy-Bold";
+    padding-bottom: 200px;
     height: 575px;
+    background: ${props => props.bgColor ? props.bgColor : "inherit"};
+    
+    .wrapper{
+        border-radius: 10px;
+        width: 100%;
+        display: flex;
+        margin: 10px 10%;
+    }
+
     section{
         display: static;
-    }
-    .with-background{
-        background: url("../../resources/background-elipses.png");
-        background-position: bottom right;
     }
     button{
         width: 50%;
