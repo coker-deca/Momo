@@ -4,12 +4,14 @@ import styled from 'styled-components';
 const StyledAspectRatio = styled.div`
   width: 100%;
   position: relative;
+  @media only screen and (max-width: 992px) {
+    width: 80%;
+  }
 
   :before {
     content: "";
     display: block;
     padding-top: 100%;
-    /* initial ratio of 1:1*/
   }
   .content {
     position: absolute;

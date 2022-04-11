@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import HamBurger from '../HamburgerMenuIcon';
 import { StyledButton } from '../ui/Button';
 import { DropdownOption } from '../ui/DropIcon';
 import { Logo } from '../ui/Logo';
@@ -30,13 +31,17 @@ const NavBar = () => {
   return (
     <StyledNavbar className="navbar">
       <NavbarItem>
+        <NavbarItem className="mobile">
+          <HamBurger />
+        </NavbarItem>
         <Logo />
       </NavbarItem>
-      <NavbarItem>
+      <NavbarItem className="desktop">
         Company &nbsp;
         <DropdownOption />
       </NavbarItem>
       <NavbarItem
+        className="desktop"
         onMouseEnter={() => openDropdown("features")}
         onMouseLeave={() => closeDropdown()}
       >
@@ -47,6 +52,7 @@ const NavBar = () => {
           : null}
       </NavbarItem>
       <NavbarItem
+        className="desktop"
         onMouseEnter={() => openDropdown("help")}
         onMouseLeave={() => closeDropdown()}
       >
@@ -58,6 +64,7 @@ const NavBar = () => {
       </NavbarItem>
       <NavbarItem>
         <NavbarItem
+          className="desktop"
           onClick={() => {
             navigate("/sign-in");
           }}
@@ -65,6 +72,7 @@ const NavBar = () => {
           Login
         </NavbarItem>
         <StyledButton
+          className="desktop"
           onClick={() => {
             navigate("/sign-up");
           }}

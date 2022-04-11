@@ -32,7 +32,7 @@ const Register: FunctionComponent = () => {
         </Container>
         <Divider />
         <Container size="40%">
-          <div className="last-image">
+          <div className="last-image image-container">
             <img
               className="splash-image"
               src={registerImage}

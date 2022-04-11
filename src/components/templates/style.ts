@@ -6,17 +6,23 @@ export const Wrapper = styled.div`
     box-sizing: border-box;
     width: 100%;
     padding: 4% 0;
-    height: 100vh;
 
     .with-background{
         background: url(${elipses}) no-repeat;
-        background-position: top 5px right 10px;
+        background-position: bottom 20% right 10px;
+    }
+
+    .logo{
+        margin: 10px 10%;
     }
 `;
 
 export const Divider = styled.div`
     width: 20%;
     height: 100%;
+    @media only screen and (max-width: 992px){
+        display: none;
+    }
 `;
 
 export const Container = styled.section<{size?:string}>`
@@ -31,6 +37,15 @@ export const Container = styled.section<{size?:string}>`
     flex-direction: column;
     justify-content: center;
     padding: 0 3%;
+
+    .image-container{
+        @media only screen and (max-width: 992px){
+            height: 500px;
+            width: auto;
+            margin-bottom: 50px;
+        }
+        img{width:auto;max-height:100%}
+    }
 
     .splash-image {
         width: 100%;
@@ -51,13 +66,7 @@ export const Container = styled.section<{size?:string}>`
     .images{
         position: absolute;
     }
-    #elipses {
-        width: 40%;
-        min-width: 280px;
-        height: auto;
-        right: 0;
-        bottom: 0;
-    }
+
     #unsplash {
         width: 70%;
         min-width: 420px;
@@ -84,6 +93,9 @@ export const Container = styled.section<{size?:string}>`
         height: 140%;
         img{
             height: 100%;
+            @media only screen and (max-width: 992px){
+                height: auto;
+            }
         }
     }
 `;
@@ -91,10 +103,7 @@ export const Container = styled.section<{size?:string}>`
 export const Row = styled.div`
     display: flex;
     justify-content: space-between;
-
-    @media only screen and (max-width: 992px){
-        flex-direction: column-reverse;
-    }
+    height: 100%;
 
     form-container{
         width: 38%;
@@ -102,6 +111,22 @@ export const Row = styled.div`
             width: 100%;
         }
     }
+        
+    .wrapper{
+        border-radius: 10px;
+        width: 100%;
+        display: flex;
+        margin: 10px 10%;
+
+        @media only screen and (max-width: 992px){
+            flex-direction: column-reverse;
+        }
+    }
+
+    .reversed{
+        @media only screen and (max-width: 992px){
+            flex-direction: column;
+    }}
 `;
 
 export const HomeRow = styled(Row)<{bgColor?: string}>`
@@ -109,13 +134,6 @@ export const HomeRow = styled(Row)<{bgColor?: string}>`
     padding-bottom: 200px;
     height: 575px;
     background: ${props => props.bgColor ? props.bgColor : "inherit"};
-    
-    .wrapper{
-        border-radius: 10px;
-        width: 100%;
-        display: flex;
-        margin: 10px 10%;
-    }
 
     section{
         display: static;
@@ -126,5 +144,9 @@ export const HomeRow = styled(Row)<{bgColor?: string}>`
 
     svg{
         margin: 28px 12px 0 0;
+    }
+    @media only screen and (max-width: 992px){
+        height: auto;
+        padding-bottom: 30px;
     }
 `;

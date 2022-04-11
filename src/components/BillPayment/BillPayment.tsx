@@ -10,7 +10,7 @@ import { Splash } from '../ui/Splash';
 const BillPayment: FunctionComponent = () => {
   return (
     <HomeRow className="with-background">
-      <div className="wrapper">
+      <div className="wrapper reversed">
         <Container size="40%">
           <img
             className="splash-image"

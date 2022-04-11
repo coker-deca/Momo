@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 
-import backgroundElipses from '../../resources/background-elipses.png';
 import elipse from '../../resources/elipse.svg';
 import rectangle from '../../resources/rectangle.svg';
 import unsplash from '../../resources/unsplash.png';
@@ -22,34 +21,32 @@ const AuthTemplate: FunctionComponent<FormProps> = ({
 }) => {
   return (
     <Wrapper>
-      <Logo />
-      <Row>
-        <div className="form-container">
-          <Form path={path} title={title} details={details}>
-            {children}
-          </Form>
+      <div className="logo">
+        <Logo />
+      </div>
+      <Row className="with-background">
+        <div className="wrapper">
+          <div className="form-container">
+            <Form path={path} title={title} details={details}>
+              {children}
+            </Form>
+          </div>
+          <Container>
+            <img
+              className="images"
+              id="unsplash"
+              src={unsplash}
+              alt="Unsplashed Image of a lady"
+            />
+            <img
+              className="images"
+              id="rectangle"
+              src={rectangle}
+              alt="a rectangle"
+            />
+            <img className="images" id="elipse" src={elipse} alt="an elipse" />
+          </Container>
         </div>
-        <Container>
-          <img
-            className="images"
-            id="unsplash"
-            src={unsplash}
-            alt="Unsplashed Image of a lady"
-          />
-          <img
-            className="images"
-            id="rectangle"
-            src={rectangle}
-            alt="a rectangle"
-          />
-          <img className="images" id="elipse" src={elipse} alt="an elipse" />
-          <img
-            className="images"
-            id="elipses"
-            src={backgroundElipses}
-            alt="elipses"
-          />
-        </Container>
       </Row>
     </Wrapper>
   );

@@ -7,10 +7,23 @@ export const StyledNavbar = styled.header`
 
   font-family: "Gilroy-Bold";
   font-weight: 400;
+  .desktop{
+    @media only screen and (max-width: 992px){
+    display: none;
+    width: 0;
+  }}
+
+  .mobile{
+    display: none;
+    @media only screen and (max-width: 992px){
+      display: flex;
+    }
+  }
 `;
 
 export const NavbarItem = styled.div`
   display: flex;
+  justify-content: space-between;
   position: relative;
   padding: 16px 16px;
   cursor: pointer;
