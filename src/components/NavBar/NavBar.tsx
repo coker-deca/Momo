@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import HamBurger from '../HamburgerMenuIcon';
+import MobileMenu from '../MobileMenu/MobileMenu';
 import { StyledButton } from '../ui/Button';
 import { DropdownOption } from '../ui/DropIcon';
 import { Logo } from '../ui/Logo';
@@ -32,7 +33,9 @@ const NavBar = () => {
     <StyledNavbar className="navbar">
       <NavbarItem>
         <NavbarItem className="mobile">
-          <HamBurger />
+          <HamBurger>
+            <MobileMenu />
+          </HamBurger>
         </NavbarItem>
         <Logo />
       </NavbarItem>

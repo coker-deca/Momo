@@ -140,11 +140,15 @@ export const HomeRow = styled(Row)<{bgColor?: string}>`
     }
     button{
         width: 50%;
+        @media only screen and (max-width: 992px){
+            width: 100%;
+        }
     }
 
     svg{
         margin: 28px 12px 0 0;
     }
+
     @media only screen and (max-width: 992px){
         height: auto;
         padding-bottom: 30px;

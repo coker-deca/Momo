@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 import { Bar, HamburgerDiv } from './style';
 
-const HamBurger: React.FC = () => {
+const HamBurger: FunctionComponent = ({ children }) => {
   const [toggle, setToggle] = useState(false);
   return (
     <HamburgerDiv
@@ -12,6 +12,7 @@ const HamBurger: React.FC = () => {
       <Bar className="bar1"></Bar>
       <Bar className="bar2"></Bar>
       <Bar className="bar3"></Bar>
+      {toggle ? children : null}
     </HamburgerDiv>
   );
 };
