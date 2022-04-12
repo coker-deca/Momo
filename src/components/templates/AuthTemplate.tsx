@@ -31,7 +31,7 @@ const AuthTemplate: FunctionComponent<FormProps> = ({
               {children}
             </Form>
           </div>
-          <Container>
+          <Container className="hide">
             <img
               className="images"
               id="unsplash"

@@ -120,6 +120,9 @@ export const Row = styled.div`
 
         @media only screen and (max-width: 992px){
             flex-direction: column-reverse;
+            .hide {
+                display: none;
+            }
         }
     }
 
